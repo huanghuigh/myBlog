@@ -17,4 +17,4 @@ logging:
     com.huang: debug
   file: log/blog-pro.log
 server:
-  port: 80
+  port: 777

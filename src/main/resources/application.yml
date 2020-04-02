@@ -7,3 +7,6 @@ spring:
 
 
 comment.avatar : /images/avatar.jpg
+server:
+  servlet:
+    context-path: /boke
