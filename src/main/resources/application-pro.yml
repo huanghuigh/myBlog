@@ -10,10 +10,11 @@ spring:
       ddl-auto: none
     show-sql: true
 
+
 logging:
   level:
-    root: warn
-    com.huang: info
+    root: info
+    com.huang: debug
   file: log/blog-pro.log
 server:
   port: 80

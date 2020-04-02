@@ -12,6 +12,6 @@ spring:
 #    日志
 logging:
   level:
-    root: info
-    com.huang: debug
+    root: warn
+    com.huang: info
   file: log/blo-dev.log
