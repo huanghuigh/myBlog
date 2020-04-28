@@ -27,7 +27,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
             return true;
         }else{
 //            否则跳转至登陆页面
-            response.sendRedirect("/admin");
+            response.sendRedirect("/blog");
             return false;
         }
 

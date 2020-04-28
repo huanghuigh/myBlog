@@ -60,6 +60,8 @@ public class BlogController {
         model.addAttribute("types", typeService.listType());
         // 博客
         model.addAttribute("page", blogService.listBlog(pageable, blog));
+        System.out.println("这是getUpdateTime:"+blogService.listBlog(pageable, blog).getContent().get(0).getUpdateTime());
+
         return LIST;
     }
 
@@ -74,6 +76,7 @@ public class BlogController {
     public String search(@PageableDefault(size = 10,sort = {"updateTime"},direction = Sort.Direction.DESC)Pageable pageable,
                          BlogQuery blog, Model model){
         model.addAttribute("page",blogService.listBlog(pageable,blog));
+        System.out.println("这是search:"+blogService.listBlog(pageable,blog));
         // 只刷新blogList区域
         return "admin/blogs :: blogList";
     }

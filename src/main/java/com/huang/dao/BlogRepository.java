@@ -47,7 +47,7 @@ public interface BlogRepository extends JpaRepository<Blog,Long>, JpaSpecificati
      * 获取博客年份集合
      * @return
      */
-    @Query("select function('date_format',b.updateTime,'%Y') as year from Blog b group by function('date_format',b.updateTime,'%Y') order by year asc ")
+    @Query("select function('date_format',b.updateTime,'%Y-%m-%d') as year from Blog b group by function('date_format',b.updateTime,'%Y') order by year asc ")
     List<String> findGroupYear();
 
     /**
@@ -55,7 +55,7 @@ public interface BlogRepository extends JpaRepository<Blog,Long>, JpaSpecificati
      * @param year
      * @return
      */
-    @Query("select b from Blog b where function('date_format',b.updateTime,'%Y') = ?1")
+    @Query("select b from Blog b where function('date_format',b.updateTime,'%Y-%m-%d') = ?1")
     List<Blog> findByYear(String year);
 }
 
